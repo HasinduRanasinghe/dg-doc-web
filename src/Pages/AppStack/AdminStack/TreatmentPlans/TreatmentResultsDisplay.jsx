@@ -5,7 +5,7 @@ import { db } from "../../../../Firebase/config";
 import Toaster from "../../../../Utils/Toaster/Toaster";
 import PdfGenerator from "../../../../Utils/Pdfs/TreatmentPDFGenerator";
 
-const TreatmentResultsDisplay = ({ treatmentPlan }) => {
+const TreatmentResultsDisplay = ({ treatmentPlan, formData }) => {
   if (!treatmentPlan) {
     return (
       <div className="container mt-5 text-center">
@@ -34,7 +34,6 @@ const TreatmentResultsDisplay = ({ treatmentPlan }) => {
     console.log("Generating PDF...");
     PdfGenerator.generatePdf(treatmentPlan);
   };
-  
 
   return (
     <div className="container mt-5">
@@ -138,16 +137,29 @@ const TreatmentResultsDisplay = ({ treatmentPlan }) => {
                   </h5>
                 </div>
                 <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="icon-box me-2 bg-warning bg-opacity-10 p-2 rounded">
+                      <i className="fa-solid fa-calendar-day text-light"></i>
+                    </div>
+                    <div>
+                      <small className="text-muted d-block">
+                        Appointment Date
+                      </small>
+                      <strong className="text-primary px-3 py-2">
+                        {treatmentPlan.appointmentDate}
+                      </strong>
+                    </div>
+                  </div>
                   <div className="d-flex align-items-center">
                     <div className="icon-box me-2 bg-warning bg-opacity-10 p-2 rounded">
                       <i className="fa-solid fa-calendar-day text-light"></i>
                     </div>
                     <div>
                       <small className="text-muted d-block">
-                        Next Appointment
+                        Appointment Time
                       </small>
-                      <strong className="text-primary">
-                        {treatmentPlan.next_appointment}
+                      <strong className="text-primary px-3 py-2">
+                        {treatmentPlan.timeSlot}
                       </strong>
                     </div>
                   </div>
