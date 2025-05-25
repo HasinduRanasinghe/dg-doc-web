@@ -31,7 +31,7 @@ console.log("Form Data:", formData);
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/treatment-plan/",
+        "http://localhost:8000/plan/",
         {
           id: formData.appointmentId || new Date().getTime().toString(),
           firstName: formData.firstName,

@@ -12,7 +12,6 @@ import TreatmentPlans from "./Pages/AppStack/AdminStack/TreatmentPlans/Treatment
 import Patients from "./Pages/AppStack/AdminStack/Patients/Patients";
 import Profile from "./Pages/AppStack/AdminStack/Profile/Profile";
 import AppNotifications from "./Pages/AppStack/AdminStack/AppNotifications/AppNotifications";
-import AddCategory from "./Pages/AppStack/AdminStack/AddCategory/AddCategory";
 import AppStack from "./Pages/AppStack/AppStack";
 import SignUp from "./Pages/AuthStack/SignUp/SignUp";
 import NotAuthorized from "./Pages/NotAuthorized/NotAuthorized";
@@ -50,13 +49,11 @@ function App() {
                   path="progressionTracking"
                   element={<ProgressionTracking />}
                 />
-                <Route path="addCategory" element={<AddCategory />} />
                 <Route
                   path="addAvailability"
                   element={<DoctorAvailability />}
                 />
                 <Route path="booked" element={<BookedAppointments />} />
-                <Route path="editCategory/:id" element={<AddCategory />} />
                 <Route path="treatmentPlans" element={<TreatmentPlans />} />
                 <Route path="patients" element={<Patients />} />
               </Route>

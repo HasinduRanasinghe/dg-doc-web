@@ -478,7 +478,7 @@ const TreatmentForm = ({ onSubmit, loading, doctorId }) => {
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="col-md-6">
+                <div className="col-md-12">
                   <label className="form-label text-secondary mb-2">
                     Caregiver Availability
                     <span className="ms-1 text-danger">*</span>
